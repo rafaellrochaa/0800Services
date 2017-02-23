@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControladorServicos", "ControladorServicos\ControladorServicos.csproj", "{74E60E95-4C49-44AF-BC3B-C32D3FB0451B}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{42E2B9C9-D21D-459C-B654-F62FF0686BA6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcionadorServicos0800", "AcionadorServicos0800\AcionadorServicos0800.csproj", "{25D75484-BB74-4215-A183-27A4E80CBECF}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{1ABA481A-DD19-4BD6-AADA-21FF6C3642DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,12 +19,14 @@ Global
 		{74E60E95-4C49-44AF-BC3B-C32D3FB0451B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74E60E95-4C49-44AF-BC3B-C32D3FB0451B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74E60E95-4C49-44AF-BC3B-C32D3FB0451B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42E2B9C9-D21D-459C-B654-F62FF0686BA6}.Debug|Any CPU.ActiveCfg = Debug
-		{42E2B9C9-D21D-459C-B654-F62FF0686BA6}.Release|Any CPU.ActiveCfg = Release
 		{25D75484-BB74-4215-A183-27A4E80CBECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{25D75484-BB74-4215-A183-27A4E80CBECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25D75484-BB74-4215-A183-27A4E80CBECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25D75484-BB74-4215-A183-27A4E80CBECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ABA481A-DD19-4BD6-AADA-21FF6C3642DA}.Debug|Any CPU.ActiveCfg = Debug
+		{1ABA481A-DD19-4BD6-AADA-21FF6C3642DA}.Debug|Any CPU.Build.0 = Debug
+		{1ABA481A-DD19-4BD6-AADA-21FF6C3642DA}.Release|Any CPU.ActiveCfg = Release
+		{1ABA481A-DD19-4BD6-AADA-21FF6C3642DA}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
