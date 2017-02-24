@@ -39,10 +39,7 @@
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.Description = "Faz Download dos documentos da rotalog e upload dos documentos para Cetelem.";
-            this.serviceInstaller1.DisplayName = "Agilus 0800- Serviços 0800";
             this.serviceInstaller1.ServiceName = "Agilus0800 Serviços";
-            this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 

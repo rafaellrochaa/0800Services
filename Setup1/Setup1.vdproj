@@ -15,14 +15,14 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_59F9D5EFA64948FB96420464C29CC900"
+        "MsmKey" = "8:_3E07A50A82D64BF7A2218BFA164D9B71"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_59F9D5EFA64948FB96420464C29CC900"
+        "OwnerKey" = "8:_3E07A50A82D64BF7A2218BFA164D9B71"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -50,6 +50,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
         "Release"
@@ -89,31 +97,31 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_518CEC2ACDF9453F84026F54BC30D025"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_0CCCC61247EF479D961F9CD6A3B698D8"
             {
             "Name" = "8:AcionadorServicos.exe"
             "Condition" = "8:"
-            "Object" = "8:_59F9D5EFA64948FB96420464C29CC900"
+            "Object" = "8:_3E07A50A82D64BF7A2218BFA164D9B71"
             "FileType" = "3:2"
             "InstallAction" = "3:1"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_AB24C961_3112_4142_AD08_5440A092F139"
+            "Identifier" = "8:_945EC5E6_C632_428F_AF40_7B676A8D4961"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_DDB56E3FDD8A4810807A37E7EFC7791B"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_DD535C3B93534C20942DF420952AA7E1"
             {
             "Name" = "8:AcionadorServicos.exe"
             "Condition" = "8:"
-            "Object" = "8:_59F9D5EFA64948FB96420464C29CC900"
+            "Object" = "8:_3E07A50A82D64BF7A2218BFA164D9B71"
             "FileType" = "3:2"
             "InstallAction" = "3:4"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_9F31DAD5_820B_40CF_A209_B2A481666FDD"
+            "Identifier" = "8:_82888BED_FA14_4E3B_A59B_2E3A44307038"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
@@ -140,20 +148,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_59F9D5EFA64948FB96420464C29CC900"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3E07A50A82D64BF7A2218BFA164D9B71"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AcionadorServicos, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:AcionadorServicos0800, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_59F9D5EFA64948FB96420464C29CC900"
+                    "_3E07A50A82D64BF7A2218BFA164D9B71"
                     {
                     "Name" = "8:AcionadorServicos.exe"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\AcionadorServicos\\bin\\Release\\SmartAssembly\\AcionadorServicos.exe"
+            "SourcePath" = "8:..\\AcionadorServicos0800\\bin\\Release\\SmartAssembly\\AcionadorServicos.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_83EAD4F7E3B4444191E271C6746231BD"
@@ -228,7 +236,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Serviços 0800 (upload e download)"
         "ProductCode" = "8:{142F0733-8B2B-418E-8497-519776620F67}"
-        "PackageCode" = "8:{809C23D0-726F-480C-B95B-FA6DE70108FF}"
+        "PackageCode" = "8:{7480D371-9D28-48E2-9184-273E6623645C}"
         "UpgradeCode" = "8:{A6121ACD-9A31-4C88-A7AF-6BE1C5BCBFCB}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
