@@ -49,6 +49,7 @@
     <Compile Include="DominioServicoDownload\DadosColetaProposta.cs" />
     <Compile Include="DominioServicoDownload\DocumentoRetornoRotalog.cs" />
     <Compile Include="DominioServicoUpload\Contrato.cs" />
+    <Compile Include="Infra\Geral\DadosAcesso.cs" />
     <Compile Include="Infra\RepositorioAgilus\BancoDados.cs" />
     <Compile Include="Infra\ServicoRotalog\RotalogUtil.cs" />
     <Compile Include="Infra\ServicoUpload\CetelemUtil.cs" />
