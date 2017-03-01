@@ -1,5 +1,6 @@
 ﻿using ControladorServicos.Infra.ServicoRotalog;
 using ControladorServicos.Infra.ServicoUpload;
+using System;
 using System.Collections.Generic;
 using System.ServiceProcess;
 using System.Threading;
@@ -18,8 +19,15 @@ namespace AcionadorServicos0800
 
         protected override void OnStart(string[] args)
         {
-            ControladorServicos.Infra.Utils.CarregarConfiguracaoDeAcesso();
-            timer1 = new Timer(new TimerCallback(tasks => ExecutarTasksServices0800()), null, 0, 180000);
+            try
+            {
+                ControladorServicos.Infra.Utils.CarregarConfiguracaoDeAcesso();
+                timer1 = new Timer(new TimerCallback(tasks => ExecutarTasksServices0800()), null, 0, 180000);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
         }
 
         protected override void OnStop()
