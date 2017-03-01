@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_37C7B3FCE0AE45DA80AF661C020B1FA4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F7FB966514814E54AF597239036E3108"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -111,6 +117,20 @@
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_62665DBF488343B5876FF98D5B49413B"
+            {
+            "Name" = "8:AcionadorServicos0800.exe"
+            "Condition" = "8:"
+            "Object" = "8:_F7FB966514814E54AF597239036E3108"
+            "FileType" = "3:2"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:2"
+            "Identifier" = "8:_892B8CFC_9843_466B_B9F8_B2CF6C959FBB"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
             "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_97FAB96837B24163BB2AE0E89BE32B1C"
             {
             "Name" = "8:AcionadorServicos0800.exe"
@@ -148,6 +168,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_37C7B3FCE0AE45DA80AF661C020B1FA4"
+            {
+            "SourcePath" = "8:..\\AcionadorServicos0800\\conexao.xml"
+            "TargetName" = "8:conexao.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_83EAD4F7E3B4444191E271C6746231BD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F7FB966514814E54AF597239036E3108"
             {
             "AssemblyRegister" = "3:1"
@@ -235,19 +275,19 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Serviços 0800 (upload e download)"
-        "ProductCode" = "8:{142F0733-8B2B-418E-8497-519776620F67}"
-        "PackageCode" = "8:{7480D371-9D28-48E2-9184-273E6623645C}"
+        "ProductCode" = "8:{C78B066F-1341-4F10-AD54-08E4B6820630}"
+        "PackageCode" = "8:{911EDD22-5111-40CD-949D-15A4404C9E32}"
         "UpgradeCode" = "8:{A6121ACD-9A31-4C88-A7AF-6BE1C5BCBFCB}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
         "Manufacturer" = "8:Agilus"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Servicos0800"
+        "Title" = "8:ServicosRotalog0800"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Agilus"
         "Keywords" = "8:"

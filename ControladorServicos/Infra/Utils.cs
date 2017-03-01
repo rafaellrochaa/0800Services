@@ -17,56 +17,54 @@ namespace ControladorServicos.Infra
              * Upload (Documentos Cetelem)
              * Cancelamento (Serviço que valida cancelamento de coletas.
              */
-            StreamReader sr = new StreamReader(System.AppDomain.CurrentDomain.BaseDirectory.ToString()+"/config.txt");
-            
+            StreamReader sr = new StreamReader(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "/config.txt");
+
             return sr.ReadToEnd().Contains(nomeServicoVerificacao);
         }
 
-        public DadosAcesso LerConfiguracao()
+        public static void CarregarConfiguracaoDeAcesso()
         {
-            string arquivo = getArquivo();
-            DadosAcesso dados = new DadosAcesso();
-
-            XmlDocument xml = new XmlDocument();
-            xml.Load(arquivo);
-            dados.Servidor = xml.SelectSingleNode("/Configuracao/Servidor/Endereco").InnerText;
-            dados.BancoDeDados = xml.SelectSingleNode("/Configuracao/Servidor/BancoDeDados").InnerText;
-            dados.Usuario = xml.SelectSingleNode("/Configuracao/Servidor/Usuario").InnerText;
-            dados.Senha = xml.SelectSingleNode("/Configuracao/Servidor/Senha").InnerText;
-
-            ValidarArquivo();
+            try
+            {
+                preencherDadosAcesso();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
-        public void ValidarArquivo()
+        private static DadosAcesso preencherDadosAcesso()
         {
-            string arquivo = getArquivo();
+            var xml = new XmlDocument();
+            var dados = new DadosAcesso();
+            xml.Load(getArquivo());
+            lerDadosXml(xml, dados);
 
-            if (!File.Exists(arquivo))
-            {
-                throw new Exception();
-            }
-            
-            DadosAcesso dados = new DadosAcesso();
-            XmlDocument xml = new XmlDocument();
+            return dados;
+        }
+        private static void lerDadosXml(XmlNode xml, DadosAcesso dados)
+        {
             dados.Servidor = xml.SelectSingleNode("/Configuracao/Servidor/Endereco").InnerText;
             dados.BancoDeDados = xml.SelectSingleNode("/Configuracao/Servidor/BancoDeDados").InnerText;
             dados.Usuario = xml.SelectSingleNode("/Configuracao/Servidor/Usuario").InnerText;
             dados.Senha = xml.SelectSingleNode("/Configuracao/Servidor/Senha").InnerText;
 
-            if(String.IsNullOrEmpty(dados.Servidor) || String.IsNullOrEmpty(dados.BancoDeDados) || 
+            if (String.IsNullOrEmpty(dados.Servidor) || String.IsNullOrEmpty(dados.BancoDeDados) ||
                 String.IsNullOrEmpty(dados.Usuario) || String.IsNullOrEmpty(dados.Senha))
             {
-
-            }
-
+                throw new Exception("Dados de acesso inválidos.");
             }
         }
-
         private static string getArquivo()
         {
             string arquivo = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase) + Path.DirectorySeparatorChar + "conexao.xml";
             arquivo = arquivo.Substring(6, arquivo.Length - 6);
 
+            if (!File.Exists(arquivo))
+            {
+                throw new Exception("Não foi encontrado nenhum arquivo de configuração para acesso ao banco de dados. Contate o administrador do sistema.");
+            }
             return arquivo;
         }
     }

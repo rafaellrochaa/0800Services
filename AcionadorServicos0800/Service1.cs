@@ -18,6 +18,7 @@ namespace AcionadorServicos0800
 
         protected override void OnStart(string[] args)
         {
+            ControladorServicos.Infra.Utils.CarregarConfiguracaoDeAcesso();
             timer1 = new Timer(new TimerCallback(tasks => ExecutarTasksServices0800()), null, 0, 180000);
         }
 
