@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControladorServicos", "Cont
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcionadorServicos0800", "AcionadorServicos0800\AcionadorServicos0800.csproj", "{25D75484-BB74-4215-A183-27A4E80CBECF}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{1ABA481A-DD19-4BD6-AADA-21FF6C3642DA}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{AB9C4052-F69A-4E5D-A0A2-BA2D38BECA34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,8 @@ Global
 		{25D75484-BB74-4215-A183-27A4E80CBECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25D75484-BB74-4215-A183-27A4E80CBECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25D75484-BB74-4215-A183-27A4E80CBECF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1ABA481A-DD19-4BD6-AADA-21FF6C3642DA}.Debug|Any CPU.ActiveCfg = Debug
-		{1ABA481A-DD19-4BD6-AADA-21FF6C3642DA}.Debug|Any CPU.Build.0 = Debug
-		{1ABA481A-DD19-4BD6-AADA-21FF6C3642DA}.Release|Any CPU.ActiveCfg = Release
-		{1ABA481A-DD19-4BD6-AADA-21FF6C3642DA}.Release|Any CPU.Build.0 = Release
+		{AB9C4052-F69A-4E5D-A0A2-BA2D38BECA34}.Debug|Any CPU.ActiveCfg = Debug
+		{AB9C4052-F69A-4E5D-A0A2-BA2D38BECA34}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
