@@ -40,6 +40,7 @@
             // serviceInstaller1
             // 
             this.serviceInstaller1.ServiceName = "Agilus0800 Serviços";
+            this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 

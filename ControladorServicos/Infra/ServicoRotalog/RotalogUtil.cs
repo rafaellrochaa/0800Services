@@ -33,7 +33,7 @@ namespace ControladorServicos.Infra.ServicoRotalog
 
                     foreach (var anexo in anexos)
                     {
-                        operacaoBancoDados.AtualizarFaseAfAgilus(16, codigoColeta, anexo.ProposalId); //Fase Mapeada no banco de dados como "Baixando documentos"
+                        operacaoBancoDados.AtualizarFaseAfAgilus(116, codigoColeta, anexo.ProposalId); //Fase Mapeada no banco de dados como "Baixando documentos"
                         operacaoBancoDados.GravarAnexo(anexo.Documento, anexo.NomeDocumento, anexo.ProposalId);
                     }
                 }

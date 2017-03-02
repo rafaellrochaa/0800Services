@@ -34,7 +34,7 @@ namespace ControladorServicos.Infra
             }
         }
 
-        private static DadosAcesso preencherDadosAcesso()
+        public static DadosAcesso preencherDadosAcesso()
         {
             var xml = new XmlDocument();
             var dados = new DadosAcesso();

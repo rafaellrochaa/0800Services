@@ -1,5 +1,6 @@
 ﻿using ControladorServicos.DominioServicoDownload;
 using ControladorServicos.DominioServicoUpload;
+using ControladorServicos.Infra.Geral;
 using Dapper;
 using System;
 using System.Collections.Generic;
@@ -11,15 +12,22 @@ namespace ControladorServicos.Infra.RepositorioAgilus
 {
     public class BancoDados
     {
-        private static readonly string
-             DataSource = "192.168.5.12", //Alterar banco de dados
-            InitialCatalog = "dbAgilus",
-            UserID = "suporte_agilus",
-            Password = "@gilus2016";
+        //private static readonly string
+        //     DataSource = "192.168.5.12", //Alterar banco de dados
+        //    InitialCatalog = "dbAgilus",
+        //    UserID = "suporte_agilus",
+        //    Password = "@gilus2016";
+
+        public static DadosAcesso DadosAcesso {
+            get
+            {
+                return Utils.preencherDadosAcesso();
+            }
+        }
 
         public void AtualizarFaseAfAgilus(int fase, string codigoColeta, string ProposalId)
         {
-            SqlConnection conexao = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DataSource, InitialCatalog, UserID, Password));
+            SqlConnection conexao = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DadosAcesso.Servidor, DadosAcesso.BancoDeDados, DadosAcesso.Usuario, DadosAcesso.Senha));
 
             using (conexao)
             {
@@ -42,7 +50,7 @@ namespace ControladorServicos.Infra.RepositorioAgilus
 
         public void GravarAnexo(byte[] anexo, string nomeArquivo, string ProposalId)
         {
-            SqlConnection conexao = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DataSource, InitialCatalog, UserID, Password));
+            SqlConnection conexao = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DadosAcesso.Servidor, DadosAcesso.BancoDeDados, DadosAcesso.Usuario, DadosAcesso.Senha));
 
             using (conexao)
             {
@@ -67,7 +75,7 @@ namespace ControladorServicos.Infra.RepositorioAgilus
         {
             List<IDictionary<string, string>> dadosAColetar = new List<IDictionary<string, string>>();
 
-            SqlConnection conexao = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DataSource, InitialCatalog, UserID, Password));
+            SqlConnection conexao = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DadosAcesso.Servidor, DadosAcesso.BancoDeDados, DadosAcesso.Usuario, DadosAcesso.Senha));
 
             using (conexao)
             {
@@ -95,7 +103,7 @@ namespace ControladorServicos.Infra.RepositorioAgilus
         }
         public void AtualizaFaseErroDownload(string codigoContrato, string erroDownload)
         {
-            SqlConnection conexao = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DataSource, InitialCatalog, UserID, Password));
+            SqlConnection conexao = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DadosAcesso.Servidor, DadosAcesso.BancoDeDados, DadosAcesso.Usuario, DadosAcesso.Senha));
 
             using (conexao)
             {
@@ -110,7 +118,7 @@ namespace ControladorServicos.Infra.RepositorioAgilus
         //Métodos do serviço de upload
         public static List<Contrato> ContratosComDocumentosAEnviar()
         {
-            using (IDbConnection db = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DataSource, InitialCatalog, UserID, Password)))
+            using (IDbConnection db = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DadosAcesso.Servidor, DadosAcesso.BancoDeDados, DadosAcesso.Usuario, DadosAcesso.Senha)))
             {
                 return db.Query<Contrato>("execute pr_documentos_para_cetelem", null, null, true, 0, null).ToList();
             }
@@ -122,7 +130,7 @@ namespace ControladorServicos.Infra.RepositorioAgilus
             p.Add("@af_codigo", codigoAf);
             p.Add("@nome_arquivo", nomeArquivo);
 
-            using (IDbConnection db = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DataSource, InitialCatalog, UserID, Password)))
+            using (IDbConnection db = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DadosAcesso.Servidor, DadosAcesso.BancoDeDados, DadosAcesso.Usuario, DadosAcesso.Senha)))
             {
                 db.Execute("pr_atualiza_fase_upload_cetelem_em_andamento", p, commandType: CommandType.StoredProcedure);
             }
@@ -133,7 +141,7 @@ namespace ControladorServicos.Infra.RepositorioAgilus
             var p = new DynamicParameters();
             p.Add("@af_codigo", codigoAf);
 
-            using (IDbConnection db = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DataSource, InitialCatalog, UserID, Password)))
+            using (IDbConnection db = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DadosAcesso.Servidor, DadosAcesso.BancoDeDados, DadosAcesso.Usuario, DadosAcesso.Senha)))
             {
                 db.Execute("pr_atualiza_fase_upload_cetelem_finalizado", p, commandType: CommandType.StoredProcedure);
             }
@@ -146,7 +154,7 @@ namespace ControladorServicos.Infra.RepositorioAgilus
             p.Add("@nome_arquivo", nomeArquivo);
             p.Add("@erro_portal", erroPortal);
 
-            using (IDbConnection db = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DataSource, InitialCatalog, UserID, Password)))
+            using (IDbConnection db = new SqlConnection(String.Format("Data Source= {0}; Initial Catalog={1}; User ID={2}; Password={3}", DadosAcesso.Servidor, DadosAcesso.BancoDeDados, DadosAcesso.Usuario, DadosAcesso.Senha)))
             {
                 db.Execute("pr_atualiza_fase_upload_erro", p, commandType: CommandType.StoredProcedure);
             }

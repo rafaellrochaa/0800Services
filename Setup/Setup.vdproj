@@ -15,26 +15,26 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0782AAC4275044BFB22D4BE7C84A28A1"
+        "MsmKey" = "8:_42412F88FF7E4EC19CCCB2030C0EE33D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_0CBA4549E6D04222AC8FA50469BADD43"
+        "MsmKey" = "8:_C3AED9BCE3B14DE68E6D67312B1B7F3C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_9AFA747E5DB24511B79E0BC08CCDDB0C"
+        "MsmKey" = "8:_F3F1A2E3578648EA9F77CC40A1AA006A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0782AAC4275044BFB22D4BE7C84A28A1"
+        "OwnerKey" = "8:_C3AED9BCE3B14DE68E6D67312B1B7F3C"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -55,6 +55,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -71,37 +87,45 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_096AB455F6C44B68A0B40B2943785720"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_291D551966BB4B799BA5DF5AEACE612B"
             {
             "Name" = "8:AcionadorServicos0800.exe"
             "Condition" = "8:"
-            "Object" = "8:_0782AAC4275044BFB22D4BE7C84A28A1"
-            "FileType" = "3:2"
-            "InstallAction" = "3:4"
-            "Arguments" = "8:"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_A064E243_CF83_4461_B3C4_A950FDC06A98"
-            "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:"
-            }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_E5B3211D242B44FFB34EB612464C8332"
-            {
-            "Name" = "8:AcionadorServicos0800.exe"
-            "Condition" = "8:"
-            "Object" = "8:_0782AAC4275044BFB22D4BE7C84A28A1"
+            "Object" = "8:_C3AED9BCE3B14DE68E6D67312B1B7F3C"
             "FileType" = "3:2"
             "InstallAction" = "3:1"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_43A30440_9430_4E97_BDDB_668C97F9CE78"
+            "Identifier" = "8:_E004056A_DD70_498E_A44C_53581E7A269F"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_637EFF926628478181D1EC587E491862"
+            {
+            "Name" = "8:AcionadorServicos0800.exe"
+            "Condition" = "8:"
+            "Object" = "8:_C3AED9BCE3B14DE68E6D67312B1B7F3C"
+            "FileType" = "3:2"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_4CBE95E5_10BF_4A98_9975_EB1625391AC5"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
@@ -128,14 +152,34 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0782AAC4275044BFB22D4BE7C84A28A1"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_42412F88FF7E4EC19CCCB2030C0EE33D"
+            {
+            "SourcePath" = "8:..\\AcionadorServicos0800\\conexao.xml"
+            "TargetName" = "8:conexao.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_B083F649CAD14E0192C2785E93B056D6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C3AED9BCE3B14DE68E6D67312B1B7F3C"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:AcionadorServicos0800, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_0782AAC4275044BFB22D4BE7C84A28A1"
+                    "_C3AED9BCE3B14DE68E6D67312B1B7F3C"
                     {
                     "Name" = "8:AcionadorServicos0800.exe"
                     "Attributes" = "3:512"
@@ -159,30 +203,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0CBA4549E6D04222AC8FA50469BADD43"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F3F1A2E3578648EA9F77CC40A1AA006A"
             {
             "SourcePath" = "8:..\\AcionadorServicos0800\\config.txt"
             "TargetName" = "8:config.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_B083F649CAD14E0192C2785E93B056D6"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9AFA747E5DB24511B79E0BC08CCDDB0C"
-            {
-            "SourcePath" = "8:..\\AcionadorServicos0800\\conexao.xml"
-            "TargetName" = "8:conexao.xml"
             "Tag" = "8:"
             "Folder" = "8:_B083F649CAD14E0192C2785E93B056D6"
             "Condition" = "8:"
@@ -256,7 +280,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Agilus0800Services"
         "ProductCode" = "8:{4501B983-F19B-4594-88D6-05C671B6CD05}"
-        "PackageCode" = "8:{77126799-3DB8-4152-A1B2-0ECA8EF3261E}"
+        "PackageCode" = "8:{8F2643A0-2FDB-4592-A6E4-BB94B75CBCD3}"
         "UpgradeCode" = "8:{36EDF52D-69EC-4B3B-8807-5D804A534E2A}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
