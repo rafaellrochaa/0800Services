@@ -11,7 +11,7 @@ namespace ControladorServicos.Infra.ServicoRotalog
 {
     public static class RotalogUtil
     {
-        public static void GravarAnexosBaixadosRotalog(object sender)
+        public static void GravarAnexosBaixadosRotalog(/*object sender*/)
         {
             if (Utils.AcaoDesativada("Download"))
             {

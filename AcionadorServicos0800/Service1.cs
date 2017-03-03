@@ -1,6 +1,6 @@
-﻿using ControladorServicos.Infra.ServicoRotalog;
+﻿using ControladorServicos.Infra;
+using ControladorServicos.Infra.ServicoRotalog;
 using ControladorServicos.Infra.ServicoUpload;
-using System;
 using System.Collections.Generic;
 using System.ServiceProcess;
 using System.Threading;
@@ -19,20 +19,13 @@ namespace AcionadorServicos0800
 
         protected override void OnStart(string[] args)
         {
-            try
-            {
-                ControladorServicos.Infra.Utils.CarregarConfiguracaoDeAcesso();
-                timer1 = new Timer(new TimerCallback(tasks => ExecutarTasksServices0800()), null, 0, 180000);
-            }
-            catch(Exception e)
-            {
-                throw e;
-            }
+            Utils.CarregarConfiguracaoDeAcesso();
+            timer1 = new Timer(new TimerCallback(tasks => ExecutarTasksServices0800()), null, 0, 60000);
         }
 
         protected override void OnStop()
         {
-
+            tarefasExecutando.Clear();
         }
         public void ExecutarTasksServices0800()
         {
@@ -41,18 +34,30 @@ namespace AcionadorServicos0800
             {
                 Task.Run(() =>
                 {
-                    tarefasExecutando.Add("Download");
-                    RotalogUtil.GravarAnexosBaixadosRotalog(this);
-                    tarefasExecutando.Remove("Download");
+                    try
+                    {
+                        tarefasExecutando.Add("Download");
+                        RotalogUtil.GravarAnexosBaixadosRotalog();
+                    }
+                    finally
+                    {
+                        tarefasExecutando.Remove("Download");
+                    }
                 });
             }
             if (!tarefasExecutando.Contains("Upload"))
             {
                 Task.Run(() =>
                 {
-                    tarefasExecutando.Add("Upload");
-                    CetelemUtil.GravarDocumentosAutorizadorCetelem(this);
-                    tarefasExecutando.Remove("Upload");
+                    try
+                    {
+                        tarefasExecutando.Add("Upload");
+                        CetelemUtil.GravarDocumentosAutorizadorCetelem();
+                    }
+                    finally
+                    {
+                        tarefasExecutando.Remove("Upload");
+                    }
                 });
             }
         }

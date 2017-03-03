@@ -304,7 +304,7 @@ namespace ControladorServicos.Infra.ServicoUpload
             return textoCompleto.Substring(PosicaoInicioValor, tamanhoTextoRetorno);
         }
 
-        public static void GravarDocumentosAutorizadorCetelem(object sender)
+        public static void GravarDocumentosAutorizadorCetelem()
         {
             if (Utils.AcaoDesativada("Upload"))
             {
