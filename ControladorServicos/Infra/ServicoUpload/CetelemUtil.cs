@@ -333,8 +333,8 @@ namespace ControladorServicos.Infra.ServicoUpload
                             BancoDados.AtualizaFaseUploadFinalizado(c.CodigoAf);
                         }
                     }
-                    else
-                        BancoDados.AtualizaFaseErroUpload(c.CodigoAf, c.NomeArquivo, "");
+                    //else
+                    //    BancoDados.AtualizaFaseErroUpload(c.CodigoAf, c.NomeArquivo, "");
                 }
             }
             catch (Exception)

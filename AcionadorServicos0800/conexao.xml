@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
   <Configuracao>
     <Servidor>
-      <Endereco>189.111.254.13,10000</Endereco>
-      <BancoDeDados>dbAgilus</BancoDeDados>
+      <Endereco>192.168.10.13</Endereco>
+      <BancoDeDados>dbAgilus0800</BancoDeDados>
       <Usuario>suporte_agilus</Usuario>
       <Senha>@gilus2016</Senha>
     </Servidor>

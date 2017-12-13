@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.ServiceProcess;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using System;
 
 namespace AcionadorServicos0800
 {
@@ -17,6 +19,20 @@ namespace AcionadorServicos0800
             InitializeComponent();
         }
 
+        private void GravarLogWindows(string eventoDoLog, EventLogEntryType tipoEvento)
+        {
+            if (!EventLog.SourceExists("Serviço comunicação rotalog"))
+            {
+                EventLog.CreateEventSource(
+                    "Serviço comunicação rotalog",
+                    "Application");
+            }
+
+            EventLog log = new EventLog();
+            log.Source = "Serviço comunicação rotalog";
+            log.WriteEntry(eventoDoLog, tipoEvento);
+        }
+
         protected override void OnStart(string[] args)
         {
             Utils.CarregarConfiguracaoDeAcesso();
@@ -26,6 +42,7 @@ namespace AcionadorServicos0800
         protected override void OnStop()
         {
             tarefasExecutando.Clear();
+            GravarLogWindows("Serviço de comunicação com a rotalog foi parado.", EventLogEntryType.Information);
         }
         public void ExecutarTasksServices0800()
         {
@@ -38,6 +55,10 @@ namespace AcionadorServicos0800
                     {
                         tarefasExecutando.Add("Download");
                         RotalogUtil.GravarAnexosBaixadosRotalog();
+                    }
+                    catch(Exception e)
+                    {
+                        GravarLogWindows("Erro ao efetuar download: "+ e.Message, EventLogEntryType.Error);
                     }
                     finally
                     {
@@ -53,6 +74,10 @@ namespace AcionadorServicos0800
                     {
                         tarefasExecutando.Add("Upload");
                         CetelemUtil.GravarDocumentosAutorizadorCetelem();
+                    }
+                    catch (Exception e)
+                    {
+                        GravarLogWindows("Erro ao efetuar upload: " + e.Message, EventLogEntryType.Error);
                     }
                     finally
                     {

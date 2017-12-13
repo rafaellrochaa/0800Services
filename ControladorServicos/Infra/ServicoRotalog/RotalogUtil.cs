@@ -29,7 +29,7 @@ namespace ControladorServicos.Infra.ServicoRotalog
                 List<string> propostas = dadosDownloadDocumentos._dados.Where(x => x.Values.Contains(codigoColeta)).SelectMany(v => v.Keys).ToList();
                 if (propostas.Count > 0)
                 {
-                    var anexos = DownloadAnexosRotaLog(Convert.ToInt16(codigoColeta), propostas);
+                    var anexos = DownloadAnexosRotaLog(Convert.ToInt32(codigoColeta), propostas);
 
                     foreach (var anexo in anexos)
                     {
@@ -43,8 +43,7 @@ namespace ControladorServicos.Infra.ServicoRotalog
         {
             var documentosBaixados = new List<DocumentoRetornoRotaLog>();
 
-            DataTable DocumentosDownload = new Rotalog.WebServiceRotaSoapClient().ConsultaCaminhoDocumentos("USU00480", "ag12345", codigoColeta).Tables[0];
-
+            DataTable DocumentosDownload = new WebReference.WebServiceRota().ConsultaCaminhoDocumentos("USU00480", "ag12345", codigoColeta).Tables[0];
             if (DocumentosDownload.Columns.Contains("Tipo"))
             {
                 throw new Exception(DocumentosDownload.Rows[0]["Descricao"].ToString());
