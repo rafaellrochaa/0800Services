@@ -10,7 +10,7 @@ namespace AcionadorServicos0800
         static void Main()
         {
             ServiceBase[] ServicesToRun;
-            // Teste commit 2
+            // Terceiro comment
             ServicesToRun = new ServiceBase[]
             {
                 new Agilus0800()
